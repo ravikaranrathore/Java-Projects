@@ -30,14 +30,17 @@ public class signup {
                 System.out.println("Enter new password: ");
                 pass = sc.next();
                 System.out.println("Password changed successfully !!!");
+                break;
             }
             case 2:{
                 System.out.println("Password saved !");
+                break;
             }
             default :
             {
                 System.out.println("Invalid input !");
                 System.out.println("Your password is " + pass);
+                break;
             }
         }
 
