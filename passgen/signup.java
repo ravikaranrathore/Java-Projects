@@ -21,13 +21,32 @@ public class signup {
 
         System.out.println("\nYou password is generated ...");
         System.out.println("Password: " + pass);
+        System.out.println("Do you want custom password? \n1 for YES, I want to change\n2 to continue with this password");
+        int temp = 0;
+        temp = sc.nextInt();
+        switch (temp){
+            case 1:
+            {
+                System.out.println("Enter new password: ");
+                pass = sc.next();
+                System.out.println("Password changed successfully !!!");
+            }
+            case 2:{
+                System.out.println("Password saved !");
+            }
+            default :
+            {
+                System.out.println("Invalid input !");
+                System.out.println("Your password is " + pass);
+            }
+        }
 
         try{
             FileOutputStream fout = new FileOutputStream("src/passgen/db.txt",true);
             PrintStream pout = new PrintStream(fout);
             pout.print(username + " ");
             pout.println(pass);
-            System.out.println("\nFile successfully wrote\n\n");
+            System.out.println("\nAccount successfully created\n\n");
             pout.close();
         }
         catch (IOException e) {
